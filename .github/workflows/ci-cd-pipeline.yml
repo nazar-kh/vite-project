@@ -15,5 +15,5 @@ jobs:
       - name: Git hub context
       # printing github context
         env:
-          GITHUB_CONTEXT: ${{ toJson(github) }}
-        run: echo "$GITHUB_CONTEXT.repository_owner"
+          GITHUB_CONTEXT: ${{ toJson(github.repository_owner) }}
+        run: echo "$GITHUB_CONTEXT"
