@@ -15,6 +15,6 @@ jobs:
       - name: Git hub context
       # printing github context
         env:
-          GITHUB_CONTEXT: ${{ toJson(vars) }}
+          GITHUB_CONTEXT: ${{ toJson(vars.BASE_URL) }}
         run: echo "$GITHUB_CONTEXT"
      
