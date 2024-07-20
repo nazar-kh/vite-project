@@ -1,5 +1,4 @@
-# name: git-hub-actions
-
+name: git-hub-actions
 run-name: ${{ github.actor }} is learning github
 on: [push]
 jobs:
@@ -12,3 +11,9 @@ jobs:
             node-version: '20'
       - run: npm install -g bats
       - run: bats -v 
+      - run: node -v
+      - name: Git hub context
+      # printing github context
+        env:
+          GITHUB_CONTEXT: ${{ toJson(github) }}
+        run: echo "$GITHUB_CONTEXT"
